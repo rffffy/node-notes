@@ -1,0 +1,22 @@
+{
+  "name": "notes-node",
+  "version": "1.0.0",
+  "description": "Testing out Node and it's possibilities!!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rffffy/node-notes.git"
+  },
+  "author": "Raafay Alam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rffffy/node-notes/issues"
+  },
+  "homepage": "https://github.com/rffffy/node-notes#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
