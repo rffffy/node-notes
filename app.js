@@ -12,13 +12,26 @@ var command = process.argv[2];
 console.log('Yargs', argv);
 
 if (command === 'add') {
-    notes.addOneNote(argv.title, argv.body);
+    var note = notes.addOneNote(argv.title, argv.body);
+    if (typeof note !== 'undefined') {
+        notes.logNote(note);
+    } else {
+        console.log('Note title is already used.');
+    }
 } else if (command === 'list') {
     notes.getAllNotes();
 } else if (command === 'read') {
-    notes.getOneNote(argv.title);
+    var note = notes.getOneNote(argv.title);
+    console.log(note);
+    if (note) {
+        notes.logNote(note);
+    } else {
+        console.log('Note not found');
+    }
 } else if(command === 'remove') {
-    notes.removeOneNote(argv.title);
+    var isRemoved = notes.removeOneNote(argv.title);
+    var message = isRemoved ? 'Note was removed' : 'Note not found';
+    console.log(message);
 } else {
     console.log('Command not recognized');
 }
